@@ -1,8 +1,8 @@
 # Screenshots
 
-| Datei | Inhalt |
+| File | Content |
 |---|---|
-| `01_cockpit.png` | Cockpit: KPI-Leiste, 2D-Lead-Radar (PCA), Wasserfall „Why this score?", Lookalike-Finder |
-| `02_leads_export.png` | Lead-Tabelle (Segment · Branche · Bundesland · Score) + Dossier-Export (Excel/PDF) |
-| `03_controls.png` | Sidebar: Scoring-Gewichte (Live-Simulation) & Filter |
+| `01_cockpit.png` | Cockpit: KPI bar, 2D lead radar (PCA), "Why this score?" waterfall, lookalike finder |
+| `02_leads_export.png` | Lead table (segment · industry · federal state · score) + dossier export (Excel/PDF) |
+| `03_controls.png` | Sidebar: scoring weights (live simulation) & filters |
 </content>

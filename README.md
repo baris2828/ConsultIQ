@@ -1,12 +1,12 @@
-<!-- Diese Datei wird das README des ÖFFENTLICHEN Showcase-Repos (baris2828/ConsultIQ).
-     Der Code liegt im PRIVATEN Repo; hier nur Schaufenster + Links. -->
+<!-- README of the PUBLIC showcase repo (baris2828/ConsultIQ).
+     The source code lives in the private deploy repo; this is a showcase + links only. -->
 
 <div align="center">
 
 # 🎯 ConsultIQ
-### Business-Development-Cockpit für deutsche IT-Beratungen
+### Business-development cockpit for German IT consultancies
 
-*Unsupervised ML segmentiert profitable B2B-Kunden, definiert ICPs und priorisiert hochwertige Leads — im deutschen Marktkontext (WZ-2008-Branche + Bundesland).*
+*Unsupervised ML segments profitable B2B customers, defines ICPs and prioritises high-value leads — mapped to the German market context (industry classification + federal state).*
 
 [![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Streamlit-FF4B4B?style=for-the-badge)](https://consultiq.streamlit.app/)
 &nbsp;
@@ -18,43 +18,44 @@
 
 ---
 
-## 🖼️ Vorschau
+## 🖼️ Preview
 
-**Cockpit** — KPI-Leiste, 2D-Lead-Radar (PCA), Wasserfall „Why this score?" und Lookalike-Finder auf einen Blick:
+**Cockpit** — KPI bar, 2D lead radar (PCA), the "Why this score?" waterfall and the lookalike finder at a glance:
 
 ![Cockpit](screenshots/01_cockpit.png)
 
-| Lead-Tabelle & Dossier-Export | Scoring-Gewichte & Filter |
+| Lead table & dossier export | Scoring weights & filters |
 |:--:|:--:|
-| ![Lead-Tabelle und Export](screenshots/02_leads_export.png) | ![Scoring-Gewichte und Filter](screenshots/03_controls.png) |
+| ![Lead table and export](screenshots/02_leads_export.png) | ![Scoring weights and filters](screenshots/03_controls.png) |
 
-## 💡 Was ConsultIQ kann
-- 🧩 **ICP-Segmentierung** — RFM + CLV → K-Means (Silhouette-Wahl) + DBSCAN.
-- 🛰️ **2D-Lead-Radar** — PCA-Signaturansicht aller Accounts, Referenz & Lookalikes hervorgehoben.
-- ⚖️ **Live-Scoring-Simulator** — Gewichte verschieben, Ranking ändert sich sofort; **„Warum dieser Score?"**-Wasserfall.
-- 👯 **Lookalike-Finder** — finde zu einem Top-Kunden ähnliche Accounts.
-- 🗺️ **Deutschlandkarte** — Leads je Bundesland.
-- 📤 **Dossier-Export** — Excel-Liste & PDF-One-Pager.
+## 💡 What ConsultIQ does
+- 🧩 **ICP segmentation** — RFM + CLV → K-Means (silhouette-selected) + DBSCAN.
+- 🛰️ **2D lead radar** — PCA signature view of every account, with the reference and its lookalikes highlighted.
+- ⚖️ **Live scoring simulator** — drag the weights, the ranking updates instantly; "Why this score?" waterfall.
+- 👯 **Lookalike finder** — find accounts similar to a top customer.
+- 🗺️ **Germany map** — leads per federal state.
+- 📤 **Dossier export** — Excel list & one-page PDF.
 
-## 🛠️ Tech-Stack
+## 🛠️ Tech stack
 `Python` · `Streamlit` · `pandas` · `scikit-learn` · `Plotly` · `Pydeck` · `pyarrow`
 
-## 🏗️ Architektur (kurz)
-Lokale Rohdaten → Python-Pipeline → schlankes **Parquet-Artefakt** → App liest
-ausschließlich über eine **austauschbare Datenquellen-Schnittstelle** (MySQL als
-v2 andockbar, ohne App-Änderung).
+## 🏗️ Architecture (in short)
+Local raw data → Python pipeline → a lean **Parquet artifact** → the app reads
+exclusively through a **swappable data-source interface** (MySQL can be plugged in
+as a v2 without changing the app).
 
-## 🔍 Transparenz
-Basis ist *Online Retail II* (UK-Einzelhandel). **Bundesland & WZ-Branche** sind
-eine **bewusst transparente, regelbasierte Mapping-Ebene** (Demo) — ehrlich
-dokumentiert auf der Methodik-Seite der App.
+## 🔍 Transparency
+The dataset is *Online Retail II* (UK retail). The **federal state and industry
+classification** are a **deliberately transparent, rule-based mapping layer** (demo) —
+honestly documented on the app's methodology page.
 
 ---
 
 <div align="center">
 
-**👉 [Live-Demo ausprobieren](https://consultiq.streamlit.app/)**
+**👉 [Try the live demo](https://consultiq.streamlit.app/)**
 
-Erstellt von **Baris Aydin** · Data Science Portfolio
+Built by **Baris Aydin** · Data Science Portfolio
 
 </div>
+</content>
