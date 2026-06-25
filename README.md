@@ -20,13 +20,13 @@
 
 ## 🖼️ Vorschau
 
-| Cockpit & Lead-Radar | Scoring-Simulator & Wasserfall |
-|:--:|:--:|
-| ![Cockpit](screenshots/01_cockpit.png) | ![Simulator](screenshots/02_simulator.png) |
-| **Deutschlandkarte (Bundesland)** | **Lookalike-Finder & Dossier-Export** |
-| ![Karte](screenshots/03_karte.png) | ![Lookalike](screenshots/04_lookalike.png) |
+**Cockpit** — KPI-Leiste, 2D-Lead-Radar (PCA), Wasserfall „Why this score?" und Lookalike-Finder auf einen Blick:
 
-> _Screenshots ersetzen die Platzhalter in `screenshots/` — siehe Hinweis dort._
+![Cockpit](screenshots/01_cockpit.png)
+
+| Lead-Tabelle & Dossier-Export | Scoring-Gewichte & Filter |
+|:--:|:--:|
+| ![Lead-Tabelle und Export](screenshots/02_leads_export.png) | ![Scoring-Gewichte und Filter](screenshots/03_controls.png) |
 
 ## 💡 Was ConsultIQ kann
 - 🧩 **ICP-Segmentierung** — RFM + CLV → K-Means (Silhouette-Wahl) + DBSCAN.
