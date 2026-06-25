@@ -8,7 +8,7 @@
 
 *Unsupervised ML segmentiert profitable B2B-Kunden, definiert ICPs und priorisiert hochwertige Leads — im deutschen Marktkontext (WZ-2008-Branche + Bundesland).*
 
-[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Streamlit-FF4B4B?style=for-the-badge)](PLATZHALTER_STREAMLIT_URL)
+[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Streamlit-FF4B4B?style=for-the-badge)](https://consultiq.streamlit.app/)
 &nbsp;
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.51-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
@@ -53,7 +53,7 @@ dokumentiert auf der Methodik-Seite der App.
 
 <div align="center">
 
-**👉 [Live-Demo ausprobieren](PLATZHALTER_STREAMLIT_URL)**
+**👉 [Live-Demo ausprobieren](https://consultiq.streamlit.app/)**
 
 Erstellt von **Baris Aydin** · Data Science Portfolio
 
