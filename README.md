@@ -193,7 +193,6 @@ All three tracks are designed into the architecture and **can be implemented on 
 
 **End-to-end solo build** — pipeline, ML, UI, i18n, tests and deployment, by one person.
 
-- 👔 **Recruiters & hiring managers** — I'm a **Data Scientist & Business Process Analyst** looking for roles in **IT consulting / data**. Happy to walk through the code and the modelling decisions.
 - 🏢 **Interested in the service itself?** The model adapts to other industries, regions and scoring logics — **adaptation and extension on request**.
 
 **[LinkedIn »](https://www.linkedin.com/in/baris-aydin-engineering/)** · **[GitHub »](https://github.com/baris2828)** · a source-code walkthrough is available on request.
