@@ -10,6 +10,8 @@
 
 *Unsupervised machine learning (K-Means + DBSCAN) segments B2B customers, defines Ideal Customer Profiles (ICPs) and prioritises high-value leads — translated into the German market context via WZ-2008 industry codes and federal states, delivered as an interactive Streamlit cockpit.*
 
+### From 5,878 accounts to a prioritised shortlist of 353 A-leads — in under a minute.
+
 [![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Streamlit-FF4B4B?style=for-the-badge)](https://consultiq.streamlit.app/)
 &nbsp;
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -42,8 +44,18 @@ ConsultIQ turns raw B2B transaction data into a **business-development cockpit**
 - 👯 **Lookalike finder** — cosine similarity on RFM features surfaces the accounts closest to a chosen top customer
 - 🗺️ **Germany map** — leads per federal state: circle size = number of leads, colour = average lead score
 - 🎬 **Guided demo** — a scripted scenario: from 5,878 accounts to a prioritised A-lead list in under a minute
-- 📤 **Dossier export** — Excel target list (top N) and PDF one-pager per account
+- 📤 **Professional dossier export** — a single-page **PDF dossier** with a transparent score breakdown (value × weight = contribution) and an **Excel** target list with an explanatory legend sheet; both strictly single-language (EN **or** DE). [See an example dossier »](examples/consultiq_lead_dossier_example.pdf)
 - 🌍 **Bilingual UI (EN/DE)** — every label, tooltip and explanation, switchable in the sidebar
+
+## 🎯 Who is this for?
+
+ConsultIQ is built for **small-to-mid-sized German IT & management consultancies** that:
+
+- have a **B2B client base** and a lean **sales/BD team** — not a dedicated data-science unit;
+- already sit on **per-account transaction or revenue history** (a CRM/ERP export is enough); and
+- need to decide **where to spend limited outreach time next quarter** — not another dashboard, but a *ranked shortlist*.
+
+**Adaptable to** other industries, regions and scoring logics — the pipeline and the single swappable data interface are built precisely for that kind of re-targeting.
 
 ## 🚀 Live demo
 
@@ -133,7 +145,7 @@ ConsultIQ turns raw B2B transaction data into a **business-development cockpit**
 | **Occasional Buyers** | 1,465 | 24.9% | 227.9 / 185.0 | 5.1 / 5.0 | 2,002 / 1,509 | 4,614 / 1,730 |
 | **Lost Customers** | 1,974 | 33.6% | 395.9 / 404.0 | 1.4 / 1.0 | 326 / 284 | 2,991 / 2,230 |
 
-With the default weights, the cockpit grades **353 accounts as A-leads** (score ≥ 80) at an average lead score of 56.4 across the base — a shortlist a BD team can actually work through.
+With the **default weights**, the cockpit grades **353 accounts as A-leads** (score ≥ 80), and the **average lead score across the base is 56.4** — both figures are computed at those default weights and update live as you move the sliders. That A-list is a shortlist a BD team can actually work through.
 
 ## 🛠️ Tech stack
 
@@ -141,7 +153,7 @@ With the default weights, the cockpit grades **353 accounts as A-leads** (score 
 
 **Engineering quality**
 
-- ✅ **29 automated tests** (pytest) — pipeline logic, scoring and exports, plus Streamlit `AppTest` smoke tests of the app itself
+- ✅ **53 automated tests** (pytest) — pipeline logic, scoring and exports, plus Streamlit `AppTest` smoke tests of the app itself
 - 🌍 **Bilingual UI (EN/DE)** via a central i18n layer — no hardcoded display strings
 - 🎨 **Colour palette validated for colour-vision deficiency** — worst adjacent segment pair ΔE 16.4 under CVD simulation, all contrasts ≥ 3:1
 - 📌 Pinned dependencies and fixed random seeds — the data artifact is fully reproducible
@@ -165,7 +177,7 @@ flowchart LR
     DB[("Enterprise DB<br/>e.g. MySQL — v2")] -.->|"same interface — no app changes"| DS
 ```
 
-**DB-ready by design.** The app never reads files or databases directly — every byte of data flows through **one swappable interface** (`data_source.load_leads()`). In v1 that interface serves a lean, precomputed Parquet artifact; exchanging it for a company database (e.g. **MySQL**, local/on-premise) is a swap behind the interface — **no rebuild of the app required**. The MySQL hook already exists in the codebase.
+**DB-ready by design.** The app never reads files or databases directly — every byte of data flows through **one swappable interface** (`data_source.load_leads()`). In v1 that interface serves a lean, precomputed Parquet artifact; exchanging it for a company database (e.g. **MySQL**, local/on-premise) is a swap behind the interface — **no rebuild of the app required**. The interface seam for MySQL already exists (a documented stub).
 
 ## 🗺️ Roadmap
 
@@ -173,17 +185,22 @@ All three tracks are designed into the architecture and **can be implemented on 
 
 | Track | What it adds | How it plugs in |
 |---|---|---|
-| 🗄️ **MySQL connection** | Serve leads live from a company database (local/on-premise) instead of the Parquet artifact | The `data_source` interface already contains the MySQL hook — zero app changes |
+| 🗄️ **MySQL connection** | Serve leads live from a company database (local/on-premise) instead of the Parquet artifact | The `data_source` interface already contains the MySQL seam (a documented stub) — zero app changes |
 | 🎯 **Trained lead scoring** | Replace the hand-set weights with a trained model as soon as real conversion data exists | The four component scores stay; only the weighting is learned instead of set |
 | 🏢 **External company-data APIs** | Real firmographics (industry, region, size) instead of the transparent demo mapping | Swaps the enrichment stage of the pipeline — app and score logic unchanged |
 
 ## 📬 Contact
 
-Suggestions, questions and feature requests are very welcome — open an issue in this repo or reach out via my GitHub profile.
+**End-to-end solo build** — pipeline, ML, UI, i18n, tests and deployment, by one person.
+
+- 👔 **Recruiters & hiring managers** — I'm a **Data Scientist & Business Process Analyst** looking for roles in **IT consulting / data**. Happy to walk through the code and the modelling decisions.
+- 🏢 **Interested in the service itself?** The model adapts to other industries, regions and scoring logics — **adaptation and extension on request**.
+
+**[LinkedIn »](https://www.linkedin.com/in/baris-aydin-engineering/)** · **[GitHub »](https://github.com/baris2828)** · a source-code walkthrough is available on request.
 
 <div align="center">
 
-**👉 [Try the live demo](https://consultiq.streamlit.app/) · [github.com/baris2828](https://github.com/baris2828)**
+**👉 [Try the live demo](https://consultiq.streamlit.app/)**
 
 Built by **Baris Aydin** · Data Science Portfolio
 
